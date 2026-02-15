@@ -8,34 +8,34 @@
 
 void Scene::mirror_background_set()
 {
-    c_toilot.mirror_sprite.setOrigin(c_toilot.mirror_sprite.getLocalBounds().size / 2.f);
-    c_toilot.mirror_sprite.setPosition(c_player.getPosition());
-    c_toilot.mirror_sprite.setScale({8.f, 6.f});
+    c_toilet.mirror_sprite.setOrigin(c_toilet.mirror_sprite.getLocalBounds().size / 2.f);
+    c_toilet.mirror_sprite.setPosition(c_player.getPosition());
+    c_toilet.mirror_sprite.setScale({8.f, 6.f});
 }
 
 void Scene::mirror_text_set()
 {
-    mirror_intext.setPosition(c_toilot.mirror_sprite.getPosition() + sf::Vector2f(-200.f, 100.f));
+    mirror_intext.setPosition(c_toilet.mirror_sprite.getPosition() + sf::Vector2f(-200.f, 100.f));
     mirror_intext.setCharacterSize(40);
     mirror_intext.setString(L"一片模糊，什么都看不清");
 }
 
 void Scene::mirror_player_reset()
 {
-    c_player.setPosition(c_toilot.mirror_sprite.getPosition());
+    c_player.setPosition(c_toilet.mirror_sprite.getPosition());
 }
 
-void Scene::switch_MirrorToToilot()
+void Scene::switch_MirrorToToilet()
 {
     mirror_player_reset();
-    switchscene(SceneState::Toilot);
+    switchscene(SceneState::Toilet);
 }
 
 bool Scene::HandleEvent_Mirror_on(const sf::Event::KeyPressed &key)
 {
     if (key.code == sf::Keyboard::Key::E)
     {
-        switch_MirrorToToilot();
+        switch_MirrorToToilet();
         return true;
     }
     return false;

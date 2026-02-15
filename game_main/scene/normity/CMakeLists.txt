@@ -8,8 +8,8 @@ target_sources(game_start PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/rule.cpp  
     ${CMAKE_CURRENT_SOURCE_DIR}/scene.cpp  
     ${CMAKE_CURRENT_SOURCE_DIR}/scene.hpp  
-    ${CMAKE_CURRENT_SOURCE_DIR}/toilot.cpp  
-    ${CMAKE_CURRENT_SOURCE_DIR}/toilot.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/toilet.cpp  
+    ${CMAKE_CURRENT_SOURCE_DIR}/toilet.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/corridor_clock.cpp
 )
 

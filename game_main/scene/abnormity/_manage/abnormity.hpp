@@ -88,26 +88,26 @@ public:
     virtual void corridor_cabinet_1_set();
     virtual void corridor_notion_board_set();
     virtual void corridor_clock_set();
-    virtual void corridor_toilotman_set();
-    virtual void corridor_toilotwoman_set();
+    virtual void corridor_toiletman_set();
+    virtual void corridor_toiletwoman_set();
     virtual void corridor_exitdoor_set();
     // 下面均在设置人物从不同位置进入走廊时的位置
     virtual void corridor_player_set_fromstairleft();
     virtual void corridor_player_set_fromstairright();
     virtual void corridor_player_set_fromclassroomleft();
     virtual void corridor_player_set_fromclassroomright();
-    virtual void corridor_player_set_fromtoilotman();
-    virtual void corridor_player_set_fromtoilotwoman();
+    virtual void corridor_player_set_fromtoiletman();
+    virtual void corridor_player_set_fromtoiletwoman();
     // 场景切换
     virtual void switch_CorridorToRule();
     virtual void switch_CorridorToClassroom();
-    virtual void switch_CorridorToToilot();
+    virtual void switch_CorridorToToilet();
     // 交互处理
     virtual bool HandleEvent_Corridor_ondoorleft(const sf::Event::KeyPressed &key);
     virtual bool HandleEvent_Corridor_ondoorright(const sf::Event::KeyPressed &key);
     virtual bool HandleEvent_Corridor_onnotionboard(const sf::Event::KeyPressed &key);
-    virtual bool HandleEvent_Corridor_ontoilotman(const sf::Event::KeyPressed &key);
-    virtual bool HandleEvent_Corridor_ontoilotwoman(const sf::Event::KeyPressed &key);
+    virtual bool HandleEvent_Corridor_ontoiletman(const sf::Event::KeyPressed &key);
+    virtual bool HandleEvent_Corridor_ontoiletwoman(const sf::Event::KeyPressed &key);
     virtual bool HandleEvent_Corridor_onflower(const sf::Event::KeyPressed &key);
     virtual bool HandleEvent_Corridor_onflower_1(const sf::Event::KeyPressed &key);
     virtual bool HandleEvent_Corridor_onflower2(const sf::Event::KeyPressed &key);
@@ -117,8 +117,8 @@ public:
     virtual bool isplayerwithcorridor_doorleft();
     virtual bool isplayerwithcorridor_doorright();
     virtual bool isplayerwithcorridor_notionboard();
-    virtual bool isplayerwithcorridor_toilotman();
-    virtual bool isplayerwithcorridor_toilotwoman();
+    virtual bool isplayerwithcorridor_toiletman();
+    virtual bool isplayerwithcorridor_toiletwoman();
     virtual bool isplayerwithcorridor_stairleft();
     virtual bool isplayerwithcorridor_stairright();
     virtual bool isplayerwithcorridor_exitdoor();
@@ -142,8 +142,8 @@ public:
     virtual void on_corridor_flower2();
     virtual void on_corridor_cabinet();
     virtual void on_corridor_cabinet_1();
-    virtual void on_corridor_toilotman();
-    virtual void on_corridor_toilotwoman();
+    virtual void on_corridor_toiletman();
+    virtual void on_corridor_toiletwoman();
     virtual void on_corridor_door_left();
     virtual void on_corridor_door_right();
     // 获得当前剩余关卡时钟显示
@@ -169,25 +169,25 @@ public:
     virtual bool HandleEvent_Rule_on(const sf::Event::KeyPressed &key);
     virtual void on_rule();
     // 下面是卫生间的设置，命名规则同上
-    virtual void toilot_set();
-    virtual void toilot_background_set();
-    virtual void toilot_door_set();
-    virtual void toilot_wash_basin_set();
-    virtual void toilot_mirror_set();
-    virtual void toilot_player_set();
-    virtual void switch_ToilotToCorridor();
-    virtual void switch_ToilotToMirror();
-    virtual void toilot_update();
-    virtual void toilot_draw(sf::RenderWindow &window);
-    virtual void toilot_draw_2(sf::RenderWindow &window);
-    virtual bool HandleEvent_Toilot_ondoor(const sf::Event::KeyPressed &key);
-    virtual bool HandleEvent_Toilot_onmirror(const sf::Event::KeyPressed &key);
-    virtual bool HandleEvent_Toilot_onwashbasin(const sf::Event::KeyPressed &key);
-    virtual bool HandleEvent_Toilot_onlid(const sf::Event::KeyPressed &key);
-    virtual void on_toilot_mirror();
-    virtual void on_toilot_wash_basin();
-    virtual void on_toilot_door();
-    virtual void on_toilot_lid();
+    virtual void toilet_set();
+    virtual void toilet_background_set();
+    virtual void toilet_door_set();
+    virtual void toilet_wash_basin_set();
+    virtual void toilet_mirror_set();
+    virtual void toilet_player_set();
+    virtual void switch_ToiletToCorridor();
+    virtual void switch_ToiletToMirror();
+    virtual void toilet_update();
+    virtual void toilet_draw(sf::RenderWindow &window);
+    virtual void toilet_draw_2(sf::RenderWindow &window);
+    virtual bool HandleEvent_Toilet_ondoor(const sf::Event::KeyPressed &key);
+    virtual bool HandleEvent_Toilet_onmirror(const sf::Event::KeyPressed &key);
+    virtual bool HandleEvent_Toilet_onwashbasin(const sf::Event::KeyPressed &key);
+    virtual bool HandleEvent_Toilet_onlid(const sf::Event::KeyPressed &key);
+    virtual void on_toilet_mirror();
+    virtual void on_toilet_wash_basin();
+    virtual void on_toilet_door();
+    virtual void on_toilet_lid();
     // 镜子场景的设置
     virtual void mirror_set();
     virtual void mirror_background_set();
@@ -196,13 +196,13 @@ public:
     virtual void mirror_update();
     virtual void mirror_draw(sf::RenderWindow &window);
     virtual void mirror_draw_2(sf::RenderWindow &window);
-    virtual void switch_MirrorToToilot();
+    virtual void switch_MirrorToToilet();
     virtual bool HandleEvent_Mirror_on(const sf::Event::KeyPressed &key);
 
-    bool isplayerwithtoilot_door();
-    bool isplayerwithtoilot_mirror();
-    bool isplayerwithtoilot_washbasin();
-    bool isplayerwithtoilot_lid();
+    bool isplayerwithtoilet_door();
+    bool isplayerwithtoilet_mirror();
+    bool isplayerwithtoilet_washbasin();
+    bool isplayerwithtoilet_lid();
     // 场景切换函数
     virtual void switchscene(SceneState newScene);
     // 左右边缘碰撞检测函数，防止出界

@@ -23,14 +23,14 @@ void Scene::switchscene(SceneState newScene)
     case SceneState::Corridor:
         currentSceneBackground = &c_corridor.background_sprite;
         break;
-    case SceneState::Toilot:
-        currentSceneBackground = &c_toilot.background_sprite;
+    case SceneState::Toilet:
+        currentSceneBackground = &c_toilet.background_sprite;
         break;
     case SceneState::Rule:
         currentSceneBackground = &c_corridor.rule_sprite;
         break;
     case SceneState::Mirror:
-        currentSceneBackground = &c_toilot.mirror_sprite;
+        currentSceneBackground = &c_toilet.mirror_sprite;
         break;
     default:
         break;

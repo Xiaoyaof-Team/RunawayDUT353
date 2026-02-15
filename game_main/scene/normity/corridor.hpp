@@ -18,8 +18,8 @@ public:
     sf::Texture flower;
     sf::Texture flower2;
     sf::Texture cabinet;
-    sf::Texture toilotman;
-    sf::Texture toilotwoman;
+    sf::Texture toiletman;
+    sf::Texture toiletwoman;
     sf::Texture rule;
     sf::Texture exitdoor;
     sf::Sprite background_sprite;
@@ -32,8 +32,8 @@ public:
     sf::Sprite flower2_sprite;
     sf::Sprite cabinet_sprite;
     sf::Sprite cabinet_1_sprite;
-    sf::Sprite toilotman_sprite;
-    sf::Sprite toilotwoman_sprite;
+    sf::Sprite toiletman_sprite;
+    sf::Sprite toiletwoman_sprite;
     sf::Sprite rule_sprite;
     sf::Sprite exitdoor_sprite;
 
@@ -50,8 +50,8 @@ public:
                  flower("game_main/picture/scene/corridor/flower.png"),
                  flower2("game_main/picture/scene/corridor/flower2.png"),
                  cabinet("game_main/picture/scene/corridor/cabinet.png"),
-                 toilotman("game_main/picture/scene/corridor/toilotman.png"),
-                 toilotwoman("game_main/picture/scene/corridor/toilotwoman.png"),
+                 toiletman("game_main/picture/scene/corridor/toiletman.png"),
+                 toiletwoman("game_main/picture/scene/corridor/toiletwoman.png"),
                  exitdoor("game_main/picture/scene/corridor/exitdoor.png"),
                  // SED:规则图片后续需要替换
                  rule("game_main/picture/scene/corridor/rule.png"),
@@ -65,8 +65,8 @@ public:
                  flower2_sprite(flower2),
                  cabinet_sprite(cabinet),
                  cabinet_1_sprite(cabinet),
-                 toilotman_sprite(toilotman),
-                 toilotwoman_sprite(toilotwoman),
+                 toiletman_sprite(toiletman),
+                 toiletwoman_sprite(toiletwoman),
                  rule_sprite(rule),
                  exitdoor_sprite(exitdoor)
     {
