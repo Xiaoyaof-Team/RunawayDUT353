@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "classroom.hpp"
 #include "corridor.hpp"
-#include "toilot.hpp"
+#include "toilet.hpp"
 #include "type.hpp"
 #include "player.hpp"
 #include <string>
@@ -20,7 +20,7 @@ enum class SceneState
     Classroom = 0,
     Classroom_desk = 1,
     Corridor = 2,
-    Toilot = 3,
+    Toilet = 3,
     Rule = 4,
     Mirror = 5
 };
@@ -33,7 +33,7 @@ public:
     // 场景大类的成员变量
     Classroom c_classroom;
     Corridor c_corridor;
-    Toilot c_toilot;
+    Toilet c_toilet;
 
     // 获得人物
     Player &c_player;
@@ -96,30 +96,30 @@ public:
     void corridor_cabinet_1_set();
     void corridor_notion_board_set();
     void corridor_clock_set();
-    void corridor_toilotman_set();
-    void corridor_toilotwoman_set();
+    void corridor_toiletman_set();
+    void corridor_toiletwoman_set();
     void corridor_exitdoor_set();
     void corridor_player_set_fromstairleft();
     void corridor_player_set_fromstairright();
     void corridor_player_set_fromclassroomleft();
     void corridor_player_set_fromclassroomright();
-    void corridor_player_set_fromtoilotman();
-    void corridor_player_set_fromtoilotwoman();
+    void corridor_player_set_fromtoiletman();
+    void corridor_player_set_fromtoiletwoman();
     void switch_CorridorToRule();
     void switch_CorridorToClassroom();
-    void switch_CorridorToToilot();
+    void switch_CorridorToToilet();
     bool HandleEvent_Corridor_ondoorleft(const sf::Event::KeyPressed &key);
     bool HandleEvent_Corridor_ondoorright(const sf::Event::KeyPressed &key);
     bool HandleEvent_Corridor_onnotionboard(const sf::Event::KeyPressed &key);
-    bool HandleEvent_Corridor_ontoilotman(const sf::Event::KeyPressed &key);
-    bool HandleEvent_Corridor_ontoilotwoman(const sf::Event::KeyPressed &key);
+    bool HandleEvent_Corridor_ontoiletman(const sf::Event::KeyPressed &key);
+    bool HandleEvent_Corridor_ontoiletwoman(const sf::Event::KeyPressed &key);
     bool HandleEvent_Corridor_onclock(const sf::Event::KeyPressed &key);
     // 判断是否相交
     bool isplayerwithcorridor_doorleft();
     bool isplayerwithcorridor_doorright();
     bool isplayerwithcorridor_notionboard();
-    bool isplayerwithcorridor_toilotman();
-    bool isplayerwithcorridor_toilotwoman();
+    bool isplayerwithcorridor_toiletman();
+    bool isplayerwithcorridor_toiletwoman();
     bool isplayerwithcorridor_stairleft();
     bool isplayerwithcorridor_stairright();
     bool isplayerwithcorridor_exitdoor();
@@ -145,28 +145,28 @@ public:
     void switch_RuleToCorridor();
     bool HandleEvent_Rule_on(const sf::Event::KeyPressed &key);
 
-    void toilot_background_set();
-    void toilot_door_set();
-    void toilot_wash_basin_set();
-    void toilot_mirror_set();
-    void toilot_player_set();
-    void switch_ToilotToCorridor();
-    void switch_ToilotToMirror();
-    bool HandleEvent_Toilot_ondoor(const sf::Event::KeyPressed &key);
-    bool HandleEvent_Toilot_onmirror(const sf::Event::KeyPressed &key);
+    void toilet_background_set();
+    void toilet_door_set();
+    void toilet_wash_basin_set();
+    void toilet_mirror_set();
+    void toilet_player_set();
+    void switch_ToiletToCorridor();
+    void switch_ToiletToMirror();
+    bool HandleEvent_Toilet_ondoor(const sf::Event::KeyPressed &key);
+    bool HandleEvent_Toilet_onmirror(const sf::Event::KeyPressed &key);
 
-    void on_toilot_mirror();
+    void on_toilet_mirror();
 
     void mirror_background_set();
     void mirror_player_reset();
     void mirror_text_set();
-    void switch_MirrorToToilot();
+    void switch_MirrorToToilet();
     bool HandleEvent_Mirror_on(const sf::Event::KeyPressed &key);
 
-    bool isplayerwithtoilotdoor();
-    bool isplayerwithtoilotmirror();
-    bool isplayerwithtoilotwashbasin();
-    bool isplayerwithtoilotlid();
+    bool isplayerwithtoiletdoor();
+    bool isplayerwithtoiletmirror();
+    bool isplayerwithtoiletwashbasin();
+    bool isplayerwithtoiletlid();
 
     void switchscene(SceneState newScene);
     void edge_check_left();

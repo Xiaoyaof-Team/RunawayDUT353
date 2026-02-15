@@ -69,18 +69,18 @@ void Scene::corridor_notion_board_set()
     c_corridor.notion_board_sprite.setScale({0.58f, 0.58f});
 }
 
-void Scene::corridor_toilotman_set()
+void Scene::corridor_toiletman_set()
 {
-    c_corridor.toilotman_sprite.setOrigin(c_corridor.toilotman_sprite.getLocalBounds().size / 2.f);
-    c_corridor.toilotman_sprite.setPosition({6265.56, 499.794});
-    c_corridor.toilotman_sprite.setScale({0.55f, 0.55f});
+    c_corridor.toiletman_sprite.setOrigin(c_corridor.toiletman_sprite.getLocalBounds().size / 2.f);
+    c_corridor.toiletman_sprite.setPosition({6265.56, 499.794});
+    c_corridor.toiletman_sprite.setScale({0.55f, 0.55f});
 }
 
-void Scene::corridor_toilotwoman_set()
+void Scene::corridor_toiletwoman_set()
 {
-    c_corridor.toilotwoman_sprite.setOrigin(c_corridor.toilotwoman_sprite.getLocalBounds().size / 2.f);
-    c_corridor.toilotwoman_sprite.setPosition({6505.51, 499.794});
-    c_corridor.toilotwoman_sprite.setScale({0.55f, 0.55f});
+    c_corridor.toiletwoman_sprite.setOrigin(c_corridor.toiletwoman_sprite.getLocalBounds().size / 2.f);
+    c_corridor.toiletwoman_sprite.setPosition({6505.51, 499.794});
+    c_corridor.toiletwoman_sprite.setScale({0.55f, 0.55f});
 }
 
 void Scene::corridor_exitdoor_set()
@@ -122,13 +122,13 @@ void Scene::corridor_player_set_fromclassroomright()
     c_player.setDirection_left();
 }
 
-void Scene::corridor_player_set_fromtoilotman()
+void Scene::corridor_player_set_fromtoiletman()
 {
     c_player.setPosition({6276.56, 644.794});
     c_player.setDirection_right();
 }
 
-void Scene::corridor_player_set_fromtoilotwoman()
+void Scene::corridor_player_set_fromtoiletwoman()
 {
     c_player.setPosition({6513.51, 644.794});
     c_player.setDirection_right();
@@ -199,10 +199,10 @@ void Scene::switch_CorridorToClassroom()
     classroom_player_set();
 }
 
-void Scene::switch_CorridorToToilot()
+void Scene::switch_CorridorToToilet()
 {
-    switchscene(SceneState::Toilot);
-    toilot_player_set();
+    switchscene(SceneState::Toilet);
+    toilet_player_set();
 }
 
 bool Scene::HandleEvent_Corridor_ondoorleft(const sf::Event::KeyPressed &key)
@@ -235,7 +235,7 @@ bool Scene::HandleEvent_Corridor_onnotionboard(const sf::Event::KeyPressed &key)
     return false;
 }
 
-bool Scene::HandleEvent_Corridor_ontoilotman(const sf::Event::KeyPressed &key)
+bool Scene::HandleEvent_Corridor_ontoiletman(const sf::Event::KeyPressed &key)
 {
     if (key.code == sf::Keyboard::Key::W)
     {
@@ -245,11 +245,11 @@ bool Scene::HandleEvent_Corridor_ontoilotman(const sf::Event::KeyPressed &key)
     return false;
 }
 
-bool Scene::HandleEvent_Corridor_ontoilotwoman(const sf::Event::KeyPressed &key)
+bool Scene::HandleEvent_Corridor_ontoiletwoman(const sf::Event::KeyPressed &key)
 {
     if (key.code == sf::Keyboard::Key::W)
     {
-        switch_CorridorToToilot();
+        switch_CorridorToToilet();
         return true;
     }
     return false;
@@ -310,14 +310,14 @@ bool Scene::isplayerwithcorridor_notionboard()
     return c_corridor.notion_board_sprite.getGlobalBounds().findIntersection(c_player.getGlobalBounds()).has_value();
 }
 
-bool Scene::isplayerwithcorridor_toilotman()
+bool Scene::isplayerwithcorridor_toiletman()
 {
-    return c_corridor.toilotman_sprite.getGlobalBounds().contains(c_player.getPosition());
+    return c_corridor.toiletman_sprite.getGlobalBounds().contains(c_player.getPosition());
 }
 
-bool Scene::isplayerwithcorridor_toilotwoman()
+bool Scene::isplayerwithcorridor_toiletwoman()
 {
-    return c_corridor.toilotwoman_sprite.getGlobalBounds().contains(c_player.getPosition());
+    return c_corridor.toiletwoman_sprite.getGlobalBounds().contains(c_player.getPosition());
 }
 
 bool Scene::isplayerwithcorridor_stairleft()

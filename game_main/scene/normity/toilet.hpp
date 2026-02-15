@@ -1,5 +1,5 @@
 /*
- *@ 文件 ： toilot.hpp
+ *@ 文件 ： toilet.hpp
  *@ 描述 ： 厕所场景大类的实现
  *@ 作者 ： 小恐龙大魔王
  *@ 时间 ： 2026-2-6
@@ -7,7 +7,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Toilot
+class Toilet
 {
 public:
     sf::Texture background;
@@ -21,10 +21,10 @@ public:
 
 private:
 public:
-    Toilot() : background("game_main/picture/scene/toilot/background.png"),
-               door("game_main/picture/scene/toilot/door.png"),
-               wash_basin("game_main/picture/scene/toilot/wash_basin.png"),
-               mirror("game_main/picture/scene/toilot/mirror.png"),
+    Toilet() : background("game_main/picture/scene/toilet/background.png"),
+               door("game_main/picture/scene/toilet/door.png"),
+               wash_basin("game_main/picture/scene/toilet/wash_basin.png"),
+               mirror("game_main/picture/scene/toilet/mirror.png"),
                background_sprite(background),
                door_sprite(door),
                wash_basin_sprite(wash_basin),

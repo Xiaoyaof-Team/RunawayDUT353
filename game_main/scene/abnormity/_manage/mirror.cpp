@@ -26,12 +26,12 @@ void Abnormity::mirror_draw(sf::RenderWindow &c_window)
 
 void Abnormity::mirror_draw_2(sf::RenderWindow &c_window)
 {
-    c_window.draw(p_s->c_toilot.mirror_sprite);
+    c_window.draw(p_s->c_toilet.mirror_sprite);
     c_window.draw(p_s->mirror_intext);
 }
-void Abnormity::switch_MirrorToToilot()
+void Abnormity::switch_MirrorToToilet()
 {
-    p_s->switch_MirrorToToilot();
+    p_s->switch_MirrorToToilet();
     this->scene_set();
 }
 bool Abnormity::HandleEvent_Mirror_on(const sf::Event::KeyPressed &key)

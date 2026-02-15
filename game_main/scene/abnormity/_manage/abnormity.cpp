@@ -20,8 +20,8 @@ void Abnormity::scene_set()
     case SceneState::Corridor:
         corridor_set();
         break;
-    case SceneState::Toilot:
-        toilot_set();
+    case SceneState::Toilet:
+        toilet_set();
         break;
     case SceneState::Rule:
         rule_set();
@@ -47,8 +47,8 @@ void Abnormity::scene_update()
     case SceneState::Corridor:
         corridor_update();
         break;
-    case SceneState::Toilot:
-        toilot_update();
+    case SceneState::Toilet:
+        toilet_update();
         break;
     case SceneState::Rule:
         rule_update();
@@ -77,8 +77,8 @@ void Abnormity::scene_draw(sf::RenderWindow &c_window)
     case SceneState::Corridor:
         corridor_draw(c_window);
         break;
-    case SceneState::Toilot:
-        toilot_draw(c_window);
+    case SceneState::Toilet:
+        toilet_draw(c_window);
         break;
     case SceneState::Rule:
         rule_draw(c_window);
@@ -104,8 +104,8 @@ void Abnormity::scene_draw_2(sf::RenderWindow &c_window)
     case SceneState::Corridor:
         corridor_draw_2(c_window);
         break;
-    case SceneState::Toilot:
-        toilot_draw_2(c_window);
+    case SceneState::Toilet:
+        toilet_draw_2(c_window);
         break;
     case SceneState::Rule:
         rule_draw_2(c_window);
@@ -140,9 +140,9 @@ bool Abnormity::HandleEvent(const sf::Event::KeyPressed &key)
             return true;
         if (isplayerwithcorridor_notionboard() && HandleEvent_Corridor_onnotionboard(key))
             return true;
-        if (isplayerwithcorridor_toilotman() && HandleEvent_Corridor_ontoilotman(key))
+        if (isplayerwithcorridor_toiletman() && HandleEvent_Corridor_ontoiletman(key))
             return true;
-        if (isplayerwithcorridor_toilotwoman() && HandleEvent_Corridor_ontoilotwoman(key))
+        if (isplayerwithcorridor_toiletwoman() && HandleEvent_Corridor_ontoiletwoman(key))
             return true;
         if (isplayerwithcorridor_stairleft() && HandleEvent_Corridor_stairleft(key))
             return true;
@@ -163,14 +163,14 @@ bool Abnormity::HandleEvent(const sf::Event::KeyPressed &key)
         if (isplayerwithcorridor_clock() && HandleEvent_Corridor_onclock(key))
             return true;
         break;
-    case SceneState::Toilot:
-        if (isplayerwithtoilot_door() && HandleEvent_Toilot_ondoor(key))
+    case SceneState::Toilet:
+        if (isplayerwithtoilet_door() && HandleEvent_Toilet_ondoor(key))
             return true;
-        if (isplayerwithtoilot_mirror() && HandleEvent_Toilot_onmirror(key))
+        if (isplayerwithtoilet_mirror() && HandleEvent_Toilet_onmirror(key))
             return true;
-        if (isplayerwithtoilot_washbasin() && HandleEvent_Toilot_onwashbasin(key))
+        if (isplayerwithtoilet_washbasin() && HandleEvent_Toilet_onwashbasin(key))
             return true;
-        if (isplayerwithtoilot_lid() && HandleEvent_Toilot_onlid(key))
+        if (isplayerwithtoilet_lid() && HandleEvent_Toilet_onlid(key))
             return true;
         break;
     case SceneState::Rule:
