@@ -10,8 +10,31 @@
 #include <random>
 #include "normal.hpp"
 #include "Application.hpp"
-#include "1.ClassroomWithManything/ClassroomwithManything.hpp"
+#include "1.ClassroomWithManything/ClassroomWithManything.hpp"
+#include "2.ClassroomWithWrongDesks/ClassroomWithWrongDesks.hpp"
 #include "3.CorridorWithWrongBoard/CorridorWithWrongBoard.hpp"
+#include "4.ToiletWithWrongGlass/ToiletWithWrongGlass.hpp"
+#include "5.CorridorWithNoLight/CorridorWithNoLight.hpp"
+#include "6.PlayerSpeedWrong/PlayerSpeedWrong.hpp"
+#include "7.ToiletWithSomeone/ToiletWithSomeone.hpp"
+#include "8.CorridorWithWrongClassroomDoor/CorridorWithWrongClassroomDoor.hpp"
+#include "9.CorridorWithWrongToiletDoor/CorridorWithWrongToiletDoor.hpp"
+#include "10.CorridorWithWrongClock/CorridorWithWrongClock.hpp"
+#include "11.WrongBGM/WrongBGM.hpp"
+#include "12.SomeoneWithToilet/SomeoneWithToilet.hpp"
+#include "13.SomeoneWithCorridor/SomeoneWithCorridor.hpp"
+#include "14.SomeoneWithClassroom/SomeoneWithClassroom.hpp"
+#include "15.CorridorWithWrongCabinet/CorridorWithWrongCabinet.hpp"
+#include "16.CorridorWithWrongFlower/CorridorWithWrongFlower.hpp"
+#include "17.ToiletWithWrongWashbin/ToiletWithWrongWashbin.hpp"
+#include "18.DoNotGoBack/DoNotGoBack.hpp"
+#include "19.CorridorWithWrongBackground/CorridorWithWrongBackground.hpp"
+#include "20.CorridorWithNoClassroomDoor/CorridorWithNoClassroomDoor.hpp"
+#include "21.CorridorWithBanClassroomDoor/CorridorWithBanClassroomDoor.hpp"
+#include "22.CorridorWithBanToiletDoor/CorridorWithBanToiletDoor.hpp"
+#include "23.CorridorWithNoToiletBoyDoor/CorridorWithNoToiletBoyDoor.hpp"
+#include "24.CorridorWithWrongEXIT/CorridorWithWrongEXIT.hpp"
+#include "25.CorridorWithWrongWindow/CorridorWithWrongWindow.hpp"
 
 AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
 {
@@ -21,14 +44,82 @@ AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
     abnormityFactory[1] = [this]()
     { return std::make_unique<ClassroomWithManything>(p_s); };
     abnormityFactory[2] = [this]()
-    { return std::make_unique<ClassroomWithManything>(p_s); };
+    { return std::make_unique<ClassroomWithManything>(p_s); }; // { return std::make_unique<ClassroomWithWrongDesks>(p_s); };
     abnormityFactory[3] = [this]()
     { return std::make_unique<CorridorWithWrongBoard>(p_s); };
+    abnormityFactory[4] = [this]()
+    { return std::make_unique<ToiletWithWrongGlass>(p_s); };
+    abnormityFactory[5] = [this]()
+    { return std::make_unique<CorridorWithNoLight>(p_s); };
+    abnormityFactory[6] = [this]()
+    { return std::make_unique<PlayerSpeedWrong>(p_s); };
+    abnormityFactory[7] = [this]()
+    { return std::make_unique<ToiletWithSomeone>(p_s); };
+    abnormityFactory[8] = [this]()
+    { return std::make_unique<CorridorWithWrongClassroomDoor>(p_s); };
+    abnormityFactory[9] = [this]()
+    { return std::make_unique<CorridorWithWrongToiletDoor>(p_s); };
+    abnormityFactory[10] = [this]()
+    { return std::make_unique<CorridorWithWrongClock>(p_s); };
+    abnormityFactory[11] = [this]()
+    { return std::make_unique<WrongBGM>(p_s); };
+    abnormityFactory[12] = [this]()
+    { return std::make_unique<ClassroomWithManything>(p_s); }; // { return std::make_unique<SomeoneWithToilet>(p_s); };
+    abnormityFactory[13] = [this]()
+    { return std::make_unique<ClassroomWithManything>(p_s); }; // { return std::make_unique<SomeoneWithCorridor>(p_s); };
+    abnormityFactory[14] = [this]()
+    { return std::make_unique<ClassroomWithManything>(p_s); }; // { return std::make_unique<SomeoneWithClassroom>(p_s); };
+    abnormityFactory[15] = [this]()
+    { return std::make_unique<CorridorWithWrongCabinet>(p_s); };
+    abnormityFactory[16] = [this]()
+    { return std::make_unique<CorridorWithWrongFlower>(p_s); };
+    abnormityFactory[17] = [this]()
+    { return std::make_unique<ToiletWithWrongWashbin>(p_s); };
+    abnormityFactory[18] = [this]()
+    { return std::make_unique<DoNotGoBack>(p_s); };
+    abnormityFactory[19] = [this]()
+    { return std::make_unique<CorridorWithWrongBackground>(p_s); };
+    abnormityFactory[20] = [this]()
+    { return std::make_unique<CorridorWithNoClassroomDoor>(p_s); };
+    abnormityFactory[21] = [this]()
+    { return std::make_unique<CorridorWithBanClassroomDoor>(p_s); };
+    abnormityFactory[22] = [this]()
+    { return std::make_unique<CorridorWithBanToiletDoor>(p_s); };
+    abnormityFactory[23] = [this]()
+    { return std::make_unique<CorridorWithNoToiletBoyDoor>(p_s); };
+    abnormityFactory[24] = [this]()
+    { return std::make_unique<CorridorWithWrongEXIT>(p_s); };
+    abnormityFactory[25] = [this]()
+    { return std::make_unique<CorridorWithWrongWindow>(p_s); };
 
     // 初始化hasvisited向量，默认所有异常都未出现过
     // 默认初始异常为Normal
     hasvisited.resize(abnormityFactory.size(), false);
     currentAbnormity = abnormityFactory[0]();
+}
+
+// 生成新的随机数关卡、
+int AllAbnormity::generateNewLevel()
+{
+    // return 25; // 测试用，直接返回对应关卡
+    int n = 0;
+    while (1)
+    {
+        if (getRandomLevel(1, 100) < 40)
+        {
+            return 0;
+        }
+        int newLevel = getRandomLevel(0, abnormityFactory.size() - 1);
+        if (!gethasvisited(newLevel))
+        {
+            sethasvisited(newLevel);
+            return newLevel;
+        }
+        n++;
+        if (n >= 10)
+            return 0;
+        continue;
+    }
 }
 
 // 获取当前异常索引
@@ -141,30 +232,6 @@ void AllAbnormity::checkAnswer(Menu &c_menu)
             currentAbnormity->corridor_player_set_fromstairright();
         }
         break;
-    }
-}
-
-// 生成新的随机数关卡、
-int AllAbnormity::generateNewLevel()
-{
-    // return 3; // 测试用，直接返回对应关卡
-    int n = 0;
-    while (1)
-    {
-        if (getRandomLevel(1, 100) < 40)
-        {
-            return 0;
-        }
-        int newLevel = getRandomLevel(0, abnormityFactory.size() - 1);
-        if (!gethasvisited(newLevel))
-        {
-            sethasvisited(newLevel);
-            return newLevel;
-        }
-        n++;
-        if (n >= 10)
-            return 0;
-        continue;
     }
 }
 

@@ -1,41 +1,41 @@
-/*
- *@æ–‡ä»¶ ï¼š ClassroomwithManything.hpp
- *@æè¿° ï¼š æ•™å®¤ç‰©å“å˜å¤šå¼‚å¸¸
- *@ä½œè€… ï¼š freebeitaa
- *@æ—¶é—´ ï¼š 2026-2-6
- */
-#pragma once
-#include "abnormity.hpp"
+// /*
+//  *@ÎÄ¼þ £º ClassroomwithManything.hpp
+//  *@ÃèÊö £º ½ÌÊÒÎïÆ·±ä¶àÒì³£
+//  *@×÷Õß £º freebeitaa
+//  *@Ê±¼ä £º 2026-2-6
+//  */
+// #pragma once
+// #include "abnormity.hpp"
 
-class ClassroomWithWrongDesks : public Abnormity
-{
-public:
-private:
-    sf::Texture background_texture;
-    sf::Sprite background_sprite;
+// class ClassroomWithWrongDesks : public Abnormity
+// {
+//     public:
+//     private:
+//         sf::Texture background_texture;
+//         sf::Sprite background_sprite;
 
-public:
-    using Abnormity::HandleEvent;
-    ClassroomWithManything(Scene *scene) : Abnormity(scene),
-                                           background_texture(""),
-                                           background_sprite(background_texture)
-    {
-    }
+//     public:
+//         using Abnormity::HandleEvent;
+//         ClassroomWithManything(Scene *scene) : Abnormity(scene),
+//                                                background_texture(""),
+//                                                background_sprite(background_texture)
+//         {
+//         }
 
-    // é‡å†™æ•™å®¤èƒŒæ™¯åˆ·æ–°å‡½æ•°
-    void classroom_set() override
-    {
-        p_s->currentSceneBackground = &background_sprite;
-        background_sprite.setTexture(background_texture);
-        background_sprite.setPosition({0.f, 0.f});
-        background_sprite.setScale({1.27f, 1.27f});
-        p_s->c_classroom.desk_sprite.setPosition({430.f, 960.f});
-        p_s->c_classroom.desk_sprite.setScale({1.3f, 1.3f});
-    }
-    void classroom_draw(sf::RenderWindow &window) override
-    {
-        window.draw(background_sprite);
-    }
+//         // ÖØÐ´½ÌÊÒ±³¾°Ë¢ÐÂº¯Êý
+//         void classroom_set() override
+//         {
+//             p_s->currentSceneBackground = &background_sprite;
+//             background_sprite.setTexture(background_texture);
+//             background_sprite.setPosition({0.f, 0.f});
+//             background_sprite.setScale({1.27f, 1.27f});
+//             p_s->c_classroom.desk_sprite.setPosition({430.f, 960.f});
+//             p_s->c_classroom.desk_sprite.setScale({1.3f, 1.3f});
+//         }
+//         void classroom_draw(sf::RenderWindow &window) override
+//         {
+//             window.draw(background_sprite);
+//         }
 
-private:
-};
+// private:
+// };

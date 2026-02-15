@@ -17,7 +17,7 @@ private:
 public:
     using Abnormity::HandleEvent;
     ClassroomWithManything(Scene *scene) : Abnormity(scene),
-                                           background_texture("game_main/picture/scene/classroom/background_with_manything.png"),
+                                           background_texture("game_main/picture/wrong/1.png"),
                                            background_sprite(background_texture)
     {
     }

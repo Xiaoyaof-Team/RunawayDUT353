@@ -17,7 +17,7 @@ private:
 public:
     using Abnormity::HandleEvent;
     CorridorWithWrongBoard(Scene *scene) : Abnormity(scene),
-                                           rule_texture("game_main/picture/scene/corridor/rule_wrong.png"),
+                                           rule_texture("game_main/picture/wrong/3.png"),
                                            rule_sprite(rule_texture)
     {
     }
