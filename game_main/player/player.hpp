@@ -52,8 +52,10 @@ public:
     // 检测状态
     void checkState(MenuState currentState, MenuState lastState, sf::RenderWindow &window, std::wstring skipBegin);
 
-private:
+public:
     float speed;
+
+private:
     sf::Vector2f position;
     sf::FloatRect hitbox;
     std::array<sf::Texture, 6> textures; // 哈哈好不容易扣完图才知道有雪碧图这个东西

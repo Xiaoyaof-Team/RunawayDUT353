@@ -13,7 +13,7 @@
 
 Player::Player()
     : position(0.0f, 0.0f),
-      speed(500.0f),
+      speed(900.0f),
       timing(0.0f),
       changeTime(0.2f),
       currentFrame(1),
