@@ -16,6 +16,13 @@ public:
         p_s->c_corridor.toiletman_sprite.setTexture(p_s->c_corridor.toiletwoman);
         p_s->c_corridor.toiletwoman_sprite.setTexture(p_s->c_corridor.toiletman);
     }
+
+    ~CorridorWithWrongToiletDoor() override
+    {
+        p_s->c_corridor.toiletman_sprite.setTexture(p_s->c_corridor.toiletman);
+        p_s->c_corridor.toiletwoman_sprite.setTexture(p_s->c_corridor.toiletwoman);
+    }
+
     void corridor_draw(sf::RenderWindow &window) override
     {
         Abnormity::corridor_draw(window);
