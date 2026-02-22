@@ -9,10 +9,10 @@
 #include <iostream>
 // 构造函数
 Application::Application() : c_window(sf::VideoMode({1920, 1080}), "RunawayTechbuilding1"),
-                             c_menu(c_gameState, c_camera),
+                             c_allAbnormity(&c_scene),
+                             c_menu(c_gameState, c_camera, c_allAbnormity),
                              c_scene(c_gameState, c_player),
-                             c_gameState(),
-                             c_allAbnormity(&c_scene)
+                             c_gameState()
 {
     CreateDefaultWindow();
     c_player.init();
@@ -47,10 +47,10 @@ void Application::Update()
     // SED: 更新游戏内容
     // 更新菜单状态前切换到 UI 视图
     c_window.setView(c_uiView);
-    c_menu.Menu_update(c_window);
+    c_menu.Menu_update(c_window, deltatime);
     // std::cout << "Player Position: " << c_player.getPosition().x << ", " << c_player.getPosition().y << std::endl;
     // 更新相机
-    UpdateCamera();
+    UpdateCamera(deltatime);
     c_player.checkState(c_menu.c_menuState.currentState, c_menu.c_menuState.lastState, c_window, c_menu.c_gameState.is_SkipBegin);
     c_player.update(deltatime);
     // SED::更新场景状态

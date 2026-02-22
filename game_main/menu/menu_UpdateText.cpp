@@ -76,15 +76,15 @@ void Menu::Menu_UpdateText(GameStateMachine &c_gameState, sf::RenderWindow &c_wi
         Setting_frameRateText.setFillColor(sf::Color(255, 255, 255, 150));
     }
 
-    if (Setting_zoomText.getGlobalBounds().contains(mouse))
+    if (Setting_isSwayText.getGlobalBounds().contains(mouse))
     {
-        Setting_zoomText.setString(L"恢复默认缩放");
-        Setting_zoomText.setFillColor(sf::Color(255, 255, 255, 255));
+        Setting_isSwayText.setString(L"允许视角晃动 : " + c_gameState.is_sway);
+        Setting_isSwayText.setFillColor(sf::Color(255, 255, 255, 255));
     }
     else
     {
-        Setting_zoomText.setString(L"恢复默认缩放");
-        Setting_zoomText.setFillColor(sf::Color(255, 255, 255, 150));
+        Setting_isSwayText.setString(L"允许视角晃动 : " + c_gameState.is_sway);
+        Setting_isSwayText.setFillColor(sf::Color(255, 255, 255, 150));
     }
 
     if (Setting_isMouseleaveText.getGlobalBounds().contains(mouse))

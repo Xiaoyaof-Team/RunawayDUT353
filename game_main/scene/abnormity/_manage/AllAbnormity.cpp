@@ -101,7 +101,11 @@ AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
 // 生成新的随机数关卡、
 int AllAbnormity::generateNewLevel()
 {
-    // return 25; // 测试用，直接返回对应关卡
+    // return 0; // 测试用，直接返回对应关卡
+    if (p_s->statistics_levels == 2)
+    {
+        return 0;
+    }
     int n = 0;
     while (1)
     {
@@ -111,7 +115,7 @@ int AllAbnormity::generateNewLevel()
             return 0;
         }
         int newLevel = getRandomLevel(0, abnormityFactory.size() - 1);
-        if (!gethasvisited(newLevel)&&newLevel != 12&&newLevel != 13&&newLevel != 14) 
+        if (!gethasvisited(newLevel) && newLevel != 2 && newLevel != 12 && newLevel != 13 && newLevel != 14)
         {
             sethasvisited(newLevel);
             printf("Generated new level: %d\n", newLevel);
@@ -220,8 +224,12 @@ void AllAbnormity::checkAnswer(Menu &c_menu)
         {
             // 游戏胜利
             p_s->answer = 0;
+            resetLevel();
             currentAbnormity->switchscene(SceneState::Classroom);
             c_menu.c_menuState.currentState = MenuState::Win;
+            c_menu.c_menuState.lastState = c_menu.c_menuState.currentState;
+            c_menu.lastAnimationState = c_menu.c_menuState.currentState;
+            p_s->classroom_set_first();
         }
         else
         {

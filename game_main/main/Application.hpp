@@ -32,6 +32,8 @@ private:
     // 创建相机
     sf::View c_camera;
     sf::View c_uiView;
+    float Last_distance_to_player = 0.f;
+    sf::Time timeinView;
 
     // 创建菜单
     Menu c_menu;
@@ -62,5 +64,5 @@ private:
     void CreateDefaultWindow();
     void CreateDefaultCamera();
 
-    void UpdateCamera();
+    void UpdateCamera(float deltaTime);
 };
