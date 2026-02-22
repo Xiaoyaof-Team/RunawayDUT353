@@ -21,6 +21,11 @@ public:
         blackout_texture.loadFromFile("game_main/picture/wrong/5.png");
     }
 
+    ~CorridorWithNoLight() override
+    {
+        p_s->c_corridor.background_sprite.setTexture(p_s->c_corridor.background);
+    }
+
     void corridor_set() override
     {
         Abnormity::corridor_set();
