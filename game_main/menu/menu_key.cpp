@@ -17,6 +17,7 @@ bool Menu::HandleEvent(const sf::Event::KeyPressed &key, sf::RenderWindow &c_win
         if (key.code == sf::Keyboard::Key::Escape)
         {
             c_menuState.currentState = MenuState::Pause;
+            c_menuState.lastState = c_menuState.currentState;
             return true;
         }
         break;
@@ -25,6 +26,7 @@ bool Menu::HandleEvent(const sf::Event::KeyPressed &key, sf::RenderWindow &c_win
         if (key.code == sf::Keyboard::Key::Escape)
         {
             c_menuState.currentState = MenuState::Over;
+            c_menuState.lastState = c_menuState.currentState;
             return true;
         }
         break;
@@ -33,6 +35,7 @@ bool Menu::HandleEvent(const sf::Event::KeyPressed &key, sf::RenderWindow &c_win
         if (key.code == sf::Keyboard::Key::Escape)
         {
             c_menuState.currentState = c_menuState.lastState;
+            c_menuState.lastState = c_menuState.currentState;
             return true;
         }
         break;
@@ -41,6 +44,7 @@ bool Menu::HandleEvent(const sf::Event::KeyPressed &key, sf::RenderWindow &c_win
         if (key.code == sf::Keyboard::Key::Escape)
         {
             c_menuState.currentState = MenuState::None;
+            c_menuState.lastState = c_menuState.currentState;
             return true;
         }
         break;
@@ -49,6 +53,7 @@ bool Menu::HandleEvent(const sf::Event::KeyPressed &key, sf::RenderWindow &c_win
         if (key.code == sf::Keyboard::Key::Escape)
         {
             c_menuState.currentState = MenuState::MainMenu;
+            c_menuState.lastState = c_menuState.currentState;
             return true;
         }
         break;

@@ -22,6 +22,7 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         if (MainMenu_StartText.getGlobalBounds().contains(mousePos))
         {
             // 点击开始游戏
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::None;
 
             return true;
@@ -37,6 +38,7 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         else if (MainMenu_ExitText.getGlobalBounds().contains(mousePos))
         {
             // 点击退出游戏
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::Over;
             return true;
         }
@@ -57,6 +59,7 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         if (Pause_ResumeText.getGlobalBounds().contains(mousePos))
         {
             // 点击继续游戏
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::None;
             return true;
         }
@@ -72,6 +75,8 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         {
             // 点击回到主菜单
             // SED：需要使游戏状态机回到初始状态
+            c_allAbnormity.resetLevel();
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::MainMenu;
             return true;
         }
@@ -81,6 +86,8 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         if (Over_RestartText.getGlobalBounds().contains(mousePos))
         {
             // 点击回到主菜单
+            c_allAbnormity.resetLevel();
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::MainMenu;
             return true;
         }
@@ -95,12 +102,14 @@ bool Menu::HandleEvent(const sf::Event::MouseButtonPressed &mouse, sf::RenderWin
         if (Win_RestartText.getGlobalBounds().contains(mousePos))
         {
             // 点击开始游戏
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::None;
             return true;
         }
         else if (Win_ExitText.getGlobalBounds().contains(mousePos))
         {
             // 点击回到主菜单
+            c_menuState.lastState = c_menuState.currentState;
             c_menuState.currentState = MenuState::MainMenu;
             return true;
         }
@@ -208,9 +217,16 @@ void Menu::handle_setting_change(const sf::Event::MouseButtonPressed &mouse, sf:
             c_gameState.Frame_Rate = L"30";
         }
     }
-    else if (Setting_zoomText.getGlobalBounds().contains(mousePos))
+    else if (Setting_isSwayText.getGlobalBounds().contains(mousePos))
     {
-        c_gameState.zoom_Level = 1;
+        if (c_gameState.is_sway == L"是")
+        {
+            c_gameState.is_sway = L"否";
+        }
+        else
+        {
+            c_gameState.is_sway = L"是";
+        }
     }
     else if (Setting_isMouseleaveText.getGlobalBounds().contains(mousePos))
     {

@@ -21,6 +21,11 @@ public:
         mirror_texture.loadFromFile("game_main/picture/wrong/4.png");
     }
 
+    ~ToiletWithWrongGlass()
+    {
+        p_s->c_toilet.mirror_sprite.setTexture(p_s->c_toilet.mirror);
+    }
+
     void mirror_set() override
     {
         Abnormity::mirror_set();
