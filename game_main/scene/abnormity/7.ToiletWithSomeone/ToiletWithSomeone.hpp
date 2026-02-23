@@ -29,4 +29,9 @@ public:
         toilet_wash_basin_set();
         toilet_mirror_set();
     }
+
+    ~ToiletWithSomeone() override
+    {
+        p_s->c_toilet.background_sprite.setTexture(p_s->c_toilet.background);
+    }
 };
