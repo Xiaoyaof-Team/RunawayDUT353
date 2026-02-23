@@ -56,6 +56,7 @@ void Application::Update()
     // SED::更新场景状态
     c_allAbnormity.checkAnswer(c_menu);
     c_allAbnormity.currentAbnormity->scene_update();
+    c_allAbnormity.currentAbnormity->scene_update(deltatime);
 }
 
 // 刷新显示效果

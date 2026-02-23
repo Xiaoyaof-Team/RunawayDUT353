@@ -36,6 +36,10 @@ void Abnormity::toilet_update()
     on_toilet_door();
     on_toilet_lid();
 }
+void Abnormity::toilet_update(float deltatime)
+{
+    // ¿ÕÊµÏÖ
+}
 void Abnormity::toilet_draw(sf::RenderWindow &c_window)
 {
     c_window.draw(p_s->c_toilet.background_sprite);

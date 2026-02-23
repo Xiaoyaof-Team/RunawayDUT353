@@ -58,6 +58,7 @@ void Scene::edge_check_right()
 void Scene::player_text(std::wstring text)
 {
     player_word.setString(text);
+    player_word.setOrigin(player_word.getLocalBounds().size / 2.f); // 设置文字中心为原点
     player_word.setCharacterSize(40);
     player_word.setFillColor(sf::Color::White);
     player_word_clock.restart();
@@ -72,6 +73,6 @@ void Scene::player_text_update()
     else
     {
         // 文字跟随玩家位置更新
-        player_word.setPosition(c_player.getPosition() + sf::Vector2f(-140, 40)); // 文字显示在玩家下方
+        player_word.setPosition(c_player.getPosition() + sf::Vector2f(0, 40)); // 文字显示在玩家下方
     }
 }

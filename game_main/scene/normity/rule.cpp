@@ -9,7 +9,7 @@
 void Scene::rule_background_set()
 {
     c_corridor.rule_sprite.setOrigin(c_corridor.rule_sprite.getLocalBounds().size / 2.f);
-    c_corridor.rule_sprite.setPosition(c_player.getPosition());
+    c_corridor.rule_sprite.setPosition(c_player.getPosition() + sf::Vector2f(0.f, -100.f));
 }
 
 bool Scene::HandleEvent_Rule_on(const sf::Event::KeyPressed &key)
@@ -26,7 +26,7 @@ bool Scene::HandleEvent_Rule_on(const sf::Event::KeyPressed &key)
 void Scene::rule_player_reset()
 {
     // 将人物还原至初始位置
-    c_player.setPosition(c_corridor.rule_sprite.getPosition());
+    c_player.setPosition(c_corridor.rule_sprite.getPosition() + sf::Vector2f(0.f, 100.f));
 }
 
 void Scene::switch_RuleToCorridor()

@@ -8,10 +8,10 @@
 #include "abnormity.hpp"
 #include "scene.hpp"
 #include <random>
-#include "normal.hpp"
+#include "0_normal/normal.hpp"
 #include "Application.hpp"
 #include "1.ClassroomWithManything/ClassroomWithManything.hpp"
-#include "2.ClassroomWithWrongDesks/ClassroomWithWrongDesks.hpp"
+#include "2.sEvil_Dragon!!!/sEvil_Dragon.hpp"
 #include "3.CorridorWithWrongBoard/CorridorWithWrongBoard.hpp"
 #include "4.ToiletWithWrongGlass/ToiletWithWrongGlass.hpp"
 #include "5.CorridorWithNoLight/CorridorWithNoLight.hpp"
@@ -44,7 +44,7 @@ AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
     abnormityFactory[1] = [this]()
     { return std::make_unique<ClassroomWithManything>(p_s); };
     abnormityFactory[2] = [this]()
-    { return std::make_unique<ClassroomWithManything>(p_s); }; // { return std::make_unique<ClassroomWithWrongDesks>(p_s); };
+    { return std::make_unique<sEvil_Dragon>(p_s); }; // { return std::make_unique<ClassroomWithWrongDesks>(p_s); };
     abnormityFactory[3] = [this]()
     { return std::make_unique<CorridorWithWrongBoard>(p_s); };
     abnormityFactory[4] = [this]()
@@ -101,7 +101,7 @@ AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
 // 生成新的随机数关卡、
 int AllAbnormity::generateNewLevel()
 {
-    // return 0; // 测试用，直接返回对应关卡
+    return 2; // 测试用，直接返回对应关卡
     if (p_s->statistics_levels == 2)
     {
         return 0;
@@ -115,7 +115,7 @@ int AllAbnormity::generateNewLevel()
             return 0;
         }
         int newLevel = getRandomLevel(0, abnormityFactory.size() - 1);
-        if (!gethasvisited(newLevel) && newLevel != 2 && newLevel != 12 && newLevel != 13 && newLevel != 14)
+        if (!gethasvisited(newLevel) && newLevel != 12 && newLevel != 13 && newLevel != 14)
         {
             sethasvisited(newLevel);
             printf("Generated new level: %d\n", newLevel);

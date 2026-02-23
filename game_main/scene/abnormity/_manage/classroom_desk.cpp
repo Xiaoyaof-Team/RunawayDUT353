@@ -17,6 +17,10 @@ void Abnormity::classroom_desk_update()
 {
     on_classroom_desk_text();
 }
+void Abnormity::classroom_desk_update(float deltatime)
+{
+    // 空实现
+}
 void Abnormity::classroom_desk_draw(sf::RenderWindow &c_window)
 {
     // 默认不绘制任何内容

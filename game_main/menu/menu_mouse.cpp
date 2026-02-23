@@ -243,8 +243,14 @@ void Menu::handle_setting_change(const sf::Event::MouseButtonPressed &mouse, sf:
     }
     else if (Setting_isMousefollowText.getGlobalBounds().contains(mousePos))
     {
-        // 切换鼠标跟随视角设置
-        // SED: 我想加一个视角动画，让视角有一定跟手效果
+        if (c_gameState.is_Mouse_Follow_Camera == L"是")
+        {
+            c_gameState.is_Mouse_Follow_Camera = L"否";
+        }
+        else
+        {
+            c_gameState.is_Mouse_Follow_Camera = L"是";
+        }
     }
     else if (Setting_isSkipBeginText.getGlobalBounds().contains(mousePos))
     {
