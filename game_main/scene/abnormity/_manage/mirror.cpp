@@ -19,6 +19,10 @@ void Abnormity::mirror_update()
 {
     // 空实现
 }
+void Abnormity::mirror_update(float deltatime)
+{
+    // 空实现
+}
 void Abnormity::mirror_draw(sf::RenderWindow &c_window)
 {
     // 默认不绘制任何内容

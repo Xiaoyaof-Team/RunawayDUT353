@@ -20,6 +20,10 @@ void Abnormity::classroom_update()
     on_classroom_desk();
     on_classroom_door();
 }
+void Abnormity::classroom_update(float deltatime)
+{
+    // ¿ÕÊµÏÖ
+}
 void Abnormity::classroom_draw(sf::RenderWindow &c_window)
 {
     c_window.draw(p_s->c_classroom.background_sprite);

@@ -17,6 +17,10 @@ void Abnormity::rule_update()
 {
     on_rule();
 }
+void Abnormity::rule_update(float deltatime)
+{
+    // 空实现
+}
 void Abnormity::rule_draw(sf::RenderWindow &c_window)
 {
     // 默认不绘制任何内容

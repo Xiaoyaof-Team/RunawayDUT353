@@ -1,8 +1,33 @@
 add_subdirectory(0_normal)
+add_subdirectory(1.ClassroomWithManything)
+add_subdirectory(2.sEvil_Dragon!!!)
+add_subdirectory(3.CorridorWithWrongBoard)
+add_subdirectory(4.ToiletWithWrongGlass)
+add_subdirectory(5.CorridorWithNoLight)
+add_subdirectory(6.PlayerSpeedWrong)
+add_subdirectory(7.ToiletWithSomeone)
+add_subdirectory(8.CorridorWithWrongClassroomDoor)
+add_subdirectory(9.CorridorWithWrongToiletDoor)
+add_subdirectory(10.CorridorWithWrongClock)
+add_subdirectory(11.WrongBGM)
+add_subdirectory(12.SomeoneWithToilet)
+add_subdirectory(13.SomeoneWithCorridor)
+add_subdirectory(14.SomeoneWithClassroom)
+add_subdirectory(15.CorridorWithWrongCabinet)
+add_subdirectory(16.CorridorWithWrongFlower)
+add_subdirectory(17.ToiletWithWrongWashbin)
+add_subdirectory(18.DoNotGoBack)
+add_subdirectory(19.CorridorWithWrongBackground)
+add_subdirectory(20.CorridorWithNoClassroomDoor)
+add_subdirectory(21.CorridorWithBanClassroomDoor)
+add_subdirectory(22.CorridorWithBanToiletDoor)
+add_subdirectory(23.CorridorWithNoToiletBoyDoor)
+add_subdirectory(24.CorridorWithWrongEXIT)
+add_subdirectory(25.CorridorWithWrongWindow)
 add_subdirectory(_manage)
 
 target_include_directories(game_start PRIVATE 
-${CMAKE_CURRENT_SOURCE_DIR}/0_normal
-${CMAKE_CURRENT_SOURCE_DIR}/_manage)
-
-target_include_directories(game_start PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/0_normal
+    ${CMAKE_CURRENT_SOURCE_DIR}/_manage
+)

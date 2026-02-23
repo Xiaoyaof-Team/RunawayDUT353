@@ -10,7 +10,7 @@ void Scene::classroom_desk_background_set()
 {
     // 设置讲台内容
     c_classroom.desk_text_sprite.setOrigin(c_classroom.desk_text_sprite.getLocalBounds().size / 2.f);
-    c_classroom.desk_text_sprite.setPosition(c_player.getPosition());
+    c_classroom.desk_text_sprite.setPosition(c_player.getPosition() + sf::Vector2f(0.f, -100.f));
     c_classroom.desk_text_sprite.setScale({1.0f, 1.0f});
 }
 
@@ -30,7 +30,7 @@ bool Scene::HandleEvent_Classroom_desk_on(const sf::Event::KeyPressed &key)
 void Scene::classroom_desk_player_reset()
 {
     // 将人物还原至初始位置
-    c_player.setPosition(c_classroom.desk_text_sprite.getPosition());
+    c_player.setPosition(c_classroom.desk_text_sprite.getPosition() + sf::Vector2f(0.f, 100.f));
 }
 
 void Scene::switch_DeskToClassroom()

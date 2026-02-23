@@ -26,6 +26,7 @@ public:
     virtual void scene_set();
     // 总更新场景，用于在场景每一帧更新时调用
     virtual void scene_update();
+    virtual void scene_update(float deltatime);
     // 总绘制场景，用于在场景每一帧绘制时调用，该函数用于绘制角色背后的画面
     virtual void scene_draw(sf::RenderWindow &c_window);
     // 总绘制场景2：绘制可以覆盖角色的画面
@@ -41,6 +42,7 @@ public:
     virtual void classroom_clock_set();
     // 教室背景的更新，更新函数是on开头的，这里只处理讲台文字的更新
     virtual void classroom_update();
+    virtual void classroom_update(float deltatime);
     // 教室背景的绘制，背景和时钟在这里被绘制
     virtual void classroom_draw(sf::RenderWindow &c_window);
     // 教室背景的绘制2，讲台和文字在这里被绘制
@@ -66,6 +68,7 @@ public:
     virtual void classroom_desk_player_reset();
     // 讲台场景的更新，约等于空实现
     virtual void classroom_desk_update();
+    virtual void classroom_desk_update(float deltatime);
     // 约等于空实现
     virtual void classroom_desk_draw(sf::RenderWindow &c_window);
     // 绘制背景
@@ -154,6 +157,7 @@ public:
     virtual bool HandleEvent_Corridor_exitdoor(const sf::Event::KeyPressed &key);
     // 走廊场景的更新，调用所有on_开头的函数
     virtual void corridor_update();
+    virtual void corridor_update(float deltatime);
     virtual void corridor_draw(sf::RenderWindow &c_window);
     virtual void corridor_draw_2(sf::RenderWindow &c_window);
     // 布告牌游戏规则页面的设置
@@ -162,6 +166,7 @@ public:
     // 依旧是设置角色回到初始位置
     virtual void rule_player_reset();
     virtual void rule_update();
+    virtual void rule_update(float deltatime);
     virtual void rule_draw(sf::RenderWindow &c_window);
     virtual void rule_draw_2(sf::RenderWindow &c_window);
     virtual void switch_RuleToCorridor();
@@ -178,6 +183,7 @@ public:
     virtual void switch_ToiletToCorridor();
     virtual void switch_ToiletToMirror();
     virtual void toilet_update();
+    virtual void toilet_update(float deltatime);
     virtual void toilet_draw(sf::RenderWindow &window);
     virtual void toilet_draw_2(sf::RenderWindow &window);
     virtual bool HandleEvent_Toilet_ondoor(const sf::Event::KeyPressed &key);
@@ -194,6 +200,7 @@ public:
     virtual void mirror_player_reset();
     virtual void mirror_text_set();
     virtual void mirror_update();
+    virtual void mirror_update(float deltatime);
     virtual void mirror_draw(sf::RenderWindow &window);
     virtual void mirror_draw_2(sf::RenderWindow &window);
     virtual void switch_MirrorToToilet();

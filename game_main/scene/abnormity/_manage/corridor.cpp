@@ -184,6 +184,10 @@ void Abnormity::corridor_update()
     on_corridor_clock();
     on_corridor_exit_door();
 }
+void Abnormity::corridor_update(float deltatime)
+{
+    // ¿ÕÊµÏÖ
+}
 void Abnormity::corridor_draw(sf::RenderWindow &c_window)
 {
     c_window.draw(p_s->c_corridor.background_sprite);

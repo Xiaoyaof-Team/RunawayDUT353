@@ -86,7 +86,7 @@ public:
     bool isAnimating = true;
 
 public:
-    AnimatedText(sf::Text *text, sf::Vector2f start, sf::Vector2f target, float delay, float duration = 0.8f)
+    AnimatedText(sf::Text *text, sf::Vector2f start, sf::Vector2f target, float delay, float duration = 0.5f)
         : text_ptr(text), startPos(start), targetPos(target), delay(delay), duration(duration)
     {
         text_ptr->setPosition(startPos);
@@ -120,9 +120,10 @@ public:
 
         // 使用缓动函数 (Ease-Out Back) 实现回弹效果
         // 公式：f(t) = 1 + c3 * (t - 1)^3 + c1 * (t - 1)^2
-        // 其中 c1 = 1.70158, c3 = c1 + 1 = 2.70158
+        // 其中 c1 控制回弹幅度，c1 越小回弹越轻微。原值为 1.70158f
+        // 其中 c3 = c1 + 1
         // 这个公式会让进度在接近 1.0 时稍微超过 1.0，然后再回到 1.0，从而产生回弹
-        float c1 = 1.70158f;
+        float c1 = 0.7f;
         float c3 = c1 + 1.0f;
         float t = progress - 1.0f;
 

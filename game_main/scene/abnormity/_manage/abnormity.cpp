@@ -64,6 +64,33 @@ void Abnormity::scene_update()
     player_text_update();
 }
 
+void Abnormity::scene_update(float deltatime)
+{
+    switch (p_s->currentSceneState)
+    {
+    case SceneState::Classroom:
+        classroom_update(deltatime);
+        break;
+    case SceneState::Classroom_desk:
+        classroom_desk_update(deltatime);
+        break;
+    case SceneState::Corridor:
+        corridor_update(deltatime);
+        break;
+    case SceneState::Toilet:
+        toilet_update(deltatime);
+        break;
+    case SceneState::Rule:
+        rule_update(deltatime);
+        break;
+    case SceneState::Mirror:
+        mirror_update(deltatime);
+        break;
+    default:
+        break;
+    }
+}
+
 void Abnormity::scene_draw(sf::RenderWindow &c_window)
 {
     switch (p_s->currentSceneState)
