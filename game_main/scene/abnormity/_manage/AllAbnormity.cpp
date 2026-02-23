@@ -101,7 +101,7 @@ AllAbnormity::AllAbnormity(Scene *scene) : p_s(scene), gen(rd())
 // 生成新的随机数关卡、
 int AllAbnormity::generateNewLevel()
 {
-    return 2; // 测试用，直接返回对应关卡
+    // return 2; // 测试用，直接返回对应关卡
     if (p_s->statistics_levels == 2)
     {
         return 0;
