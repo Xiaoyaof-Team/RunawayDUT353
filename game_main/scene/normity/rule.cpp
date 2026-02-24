@@ -9,6 +9,7 @@
 void Scene::rule_background_set()
 {
     c_corridor.rule_sprite.setOrigin(c_corridor.rule_sprite.getLocalBounds().size / 2.f);
+    c_corridor.rule_sprite.setScale({2.f, 2.f});
     c_corridor.rule_sprite.setPosition(c_player.getPosition() + sf::Vector2f(0.f, -100.f));
 }
 
