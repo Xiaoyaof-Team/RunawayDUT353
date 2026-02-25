@@ -111,14 +111,14 @@ int AllAbnormity::generateNewLevel()
     {
         if (getRandomLevel(1, 100) < 20)
         {
-            printf("Generated new level: 0\n");
+            // printf("Generated new level: 0\n");
             return 0;
         }
         int newLevel = getRandomLevel(0, abnormityFactory.size() - 1);
         if (!gethasvisited(newLevel) && newLevel != 12 && newLevel != 13 && newLevel != 14)
         {
             sethasvisited(newLevel);
-            printf("Generated new level: %d\n", newLevel);
+            // printf("Generated new level: %d\n", newLevel);
             return newLevel;
         }
         n++;
